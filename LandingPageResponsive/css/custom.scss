@@ -1,16 +1,26 @@
+@import "scss/bootstrap";
 
 /*  configuration du corps de la page   */
 body {
     font-family: arial;
 }
 
+.bootstrap-slide {
+    display: flex;
+    justify-content: center;
+    .carousel-inner {
+        width: 50%;
+        height: auto;
+        margin-top: 10px;
+    }
+}
 /*  configuration du navigateur en haut de la page  */
 nav ul {
     list-style-type: none;
     font-weight: bold;
     display: flex;
     justify-content: center; 
-    justify-content: space-between;
+    justify-content: space-around;
     padding: 0px;
     margin-right:50px;
 }
@@ -33,30 +43,31 @@ button {
     margin: 0px;
 }
 
-/*  configuration de la ligne dans l'en-tête de la page   */
-header hr {
-    width: 250px;
-    border: 1px solid white;
+/*  configuration du balise h4 et de la ligne dans l'en-tête de la page   */
+header {
+    hr {
+        width: 250px;
+        border: 1px solid white;
+    }
+    h4 {
+        margin: 0px;
+        padding: 0px;
+        text-align: center;    
+    }
 }
 
-/*  configuration des balise h4 de l'en-tête de la page   */
-header h4 {
-    margin: 0px;
-    padding: 0px;
-}
-
-/*  configuration des images dans le corps  */
-section img {
-    height: 200px;
-    padding: 50px;
-}
-
-/* configuration du trait   */
-section hr {
-    width: 200px;
-    margin-top: 50px;
-    margin-left: 0px;
-    border: 1px solid rgb(150, 147, 147);
+/*  configuration des images et du trait dans le corps  */
+section {
+    img {
+        height: 302px;
+        padding: 45px;
+    }
+    hr {
+        width: 200px;
+        margin-top: 50px;
+        margin-left: 0px;
+        border: 1px solid rgb(150, 147, 147);
+    }
 }
 
 /*  configuration du texte   */
@@ -101,18 +112,20 @@ strong {
     font-size: 130%;
 }
 
-.footnav ul {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 38%;
-    padding-top: 4px;
-    padding-left: 0px;
-    margin-left: 200px;
-}
-.footnav a {
-    text-decoration: none;
-    font-weight: bold;
+.footnav {
+    ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 38%;
+        padding-top: 4px;
+        padding-left: 0px;
+        margin-left: 200px;
+    }
+    a {
+        text-decoration: none;
+        font-weight: bold;    
+    }
 }
 
 #copyright {
@@ -148,12 +161,13 @@ strong {
         padding-top: 20px;
     } 
 
-    section hr {
-        margin-top: 5px;
-    }
-
-    section img {
-        padding: 0px;
+    section{
+        hr {
+            margin-top: 5px;
+        }
+        img {
+            padding: 0px;
+        }
     }
 
     .footsocial {
@@ -185,14 +199,15 @@ strong {
 /*  Mise en place du rupture à 544px    */
 @media all and (max-width: 544px)
 {   
-     nav ul {
-        display: flex;
-        flex-direction: column;
-        font-size: 80%; 
-    }
-    
-    nav a {
-        text-decoration: none;
+     nav {
+         ul {
+            display: flex;
+            flex-direction: column;
+            font-size: 80%;
+         }
+         a {
+             text-decoration: none;
+         } 
     }
 
     .entete {
@@ -205,9 +220,10 @@ strong {
         font-size: 80%;
     }
 
-    section img {
-        padding: 5px;
-        height: 150px;
+    section {
+        img {
+            height: 150px;
+       }
     }
 
     strong {
@@ -224,5 +240,13 @@ strong {
         width: 200px;
         font-size: 80%;
         margin-left: 0px;  
+    }
+
+    .carousel-inner {
+        min-width: 210px;
+    }
+
+    .carousel-indicators {
+        visibility: hidden;
     }
 }
